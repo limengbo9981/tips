@@ -1,0 +1,117 @@
+#info-wrap {
+    position:fixed;
+    left:50%;
+    top:0;
+    transform:translateX(-50%);
+    width:360px;
+    user-select:none;
+    transition:all .2s;
+    /*perspective:500px;*/
+}
+
+.info-child {
+    position:relative;
+    margin-top:10px;
+    width:100%;
+    border-radius:6px;
+    box-shadow:4px 5px 5px #cbcbcb8f;
+    box-sizing:border-box;
+    padding:20px 20px 20px 123px;
+    -webkit-animation:showDy .3s linear forwards;
+    animation:showDy .4s linear forwards;
+    overflow:hidden;
+    cursor:pointer;
+}
+
+.del {
+    position:absolute;
+    right:3px;
+    top:0;
+    width:30px;
+    height:30px;
+    background-image:url("./image/vanish.png");
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:14px;
+    cursor:pointer;
+}
+
+.del:hover {
+    background-image:url("./image/vanishA.png");
+}
+
+@keyframes loadingDy {
+    0% {
+        width:0;
+    }
+    100% {
+        width:100%;
+    }
+}
+
+@keyframes showDy {
+    0% {
+        transform:translateY(-100%) scale(.1);
+        z-index:-1;
+    }
+    50% {
+        opacity:.38;
+        transform:scale(.5);
+    }
+    70% {
+        transform:scale(1.3);
+        opacity:1;
+    }
+    85% {
+        transform:rotateY(16deg)
+    }
+    86% {
+        transform:rotateY(-16deg)
+    }
+    87% {
+        transform:rotateY(16deg)
+    }
+    88% {
+        transform:rotateY(-16deg)
+    }
+    90% {
+        transform:rotateY(16deg)
+    }
+    91% {
+        transform:rotateY(-16deg)
+    }
+    92% {
+        transform:rotateY(16deg)
+    }
+    93% {
+        transform:rotateY(-16deg)
+    }
+    94% {
+        transform:rotateY(16deg)
+    }
+    95% {
+        transform:rotateY(-16deg)
+    }
+    100% {
+        transform:translateY(0%) scale(1);
+    }
+}
+
+.hide {
+    animation:hideDy .6s linear forwards;
+}
+
+@keyframes hideDy {
+    0% {
+        transform:scale(1.3);
+    }
+    60%, 90% {
+        transform:translateX(-50%) scale(1);
+    }
+    90% {
+        opacity:.3;
+        transform:translateX(300%) scale(.1);
+    }
+}
+
+
